@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="../../primer/jslib/angular/angular.js"></script>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="personCtrl">
+		<p>姓名(大写)为 ： {{ lastName | uppercase }}</p>
+		<p>姓名(小写)为 ： {{ lastName | lowercase }}</p>
+		
+		<input type="number" ng-model="quantity">
+		<input type="number" ng-model="price">		
+	</div>
+
+<script type="text/javascript">
+angular.module('myApp', []).controller('personCtrl', function($scope) {
+    $scope.firstName = "John";
+    $scope.lastName = "Doe";
+    
+    $scope.fullName = function() {
+        return $scope.firstName + " " + $scope.lastName;
+    }
+
+    $scope.quantity = 12;
+    $scope.price = 10.12;
+});
+</script>
+
+</body>
+</html>
