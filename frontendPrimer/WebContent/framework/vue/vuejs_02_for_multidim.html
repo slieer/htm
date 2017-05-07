@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <title>vue test</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="app">
+        <h1>tab</h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Langugae</th>
+                    <th>Content</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="item in todos">
+                    <th scope="row">1</th>
+                    <td>{{item.text}}</td>
+                    <td>{{item.content}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <script src="../../primer/jslib/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                todos: [{
+                    text: "Learn JavaScript",
+                    content: "test"
+                }, {
+                    text: "Learn Vue.js",
+                    content: "test"
+                }, {
+                    text: "Build Something",
+                    content: "test"
+                }]
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Vue 测试实例</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="../../primer/jslib/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <ol>
+            <!-- 创建一个 todo-item 组件的实例 -->
+            <todo-item></todo-item>
+        </ol>
+    </div>
+
+    <script>
+        Vue.component('todo-item', {
+            template: '<li>这是个待办项</li>'
+        });
+
+        var app6 = new Vue({
+            el: '#app',
+            data: {}
+        })
+    </script>
+</body>
+
+</html>
