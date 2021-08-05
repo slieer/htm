@@ -1,0 +1,10 @@
+{
+  "name": "yarn-primer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "zhai",
+  "license": "MIT",
+  "dependencies": {
+    "webpack": "^4.30.0"
+  }
+}
