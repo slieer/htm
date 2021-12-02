@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="https://cdn.staticfile.org/react/18.0.0-beta-149b420f6-20211119/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/18.0.0-beta-149b420f6-20211119/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/7.0.0-beta.3/babel.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <div id="app"><div>
+    <script type="text/babel">
+      let container = ReactDOM.createRoot(document.getElementById("example"));
+      container.render(<h1>Hello, world!</h1>);
+
+      function MyFunctionComponent() {
+        return <h1>Hello from a function component!</h1>;
+      }
+
+      class App extends React.Component {
+        state = {
+          list: [1,2,3,4,5]
+        }
+      
+        render() {
+          const arr=this.state.list;
+          const listItem=[];
+          arr.map((item)=>{
+            let li=<li key={item}>{item}</li>;
+            listItem.push(li);
+          })
+      
+          return <ul>{listItem}</ul>
+        }
+      }
+      
+      let container1 = ReactDOM.createRoot(document.getElementById("app"));
+      container1.render(<App />);
+    </script>
+  </body>
+</html>

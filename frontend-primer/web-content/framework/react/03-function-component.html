@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="https://cdn.staticfile.org/react/18.0.0-beta-149b420f6-20211119/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/18.0.0-beta-149b420f6-20211119/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/7.0.0-beta.3/babel.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      //import React, { useState } from "react";
+      function Question({ question, name, change, index }) {
+        return (
+          <div key={index}>
+            <label htmlFor={"1_"+index}>{question}</label>
+            <input type="radio" id={"1_"+index} name={name} value="0" onChange={change}/>
+            <label htmlFor={"2_"+index}>超级满意</label>
+            <input type="radio" id={"2_"+index} name={name} value="1" onChange={change}/>
+            <label htmlFor="">比较满意</label>
+            <input type="radio" id={"3_"+index} name={name} value="2" onChange={change}/>
+            <label htmlFor="">满意</label>
+            <input type="radio" id={"4_"+index} name={name} value="3" onChange={change}/>
+            <label htmlFor="">不满意</label>
+            <input type="radio" id={"5_"+index} name={name} value="4" onChange={change}/>
+            <label htmlFor="">超级不满意</label>
+          </div>
+        );
+      }
+
+      function SimpleSurvey({ questions }) {
+        let result = [];
+
+        for (let q in questions) {
+          result.push(q);
+        }
+
+        const handleChange = (e) => {
+          let index = questions.indexOf(e.target.name);
+          result[index] = e.target.value;
+        };
+
+        const onSubmit = (e) => {
+          e.preventDefault();
+
+          console.log(result);
+        };
+
+        return (
+          <form onSubmit={onSubmit}>
+            {questions.map((q, index) => (
+              <Question question={q} name={q} change={handleChange} index={index} />
+            ))}
+
+            <input type="submit" value="提交" />
+          </form>
+        );
+      }
+
+      function App() {
+        return <SimpleSurvey questions={["q1", "q2", "q3", "q4"]} >
+        </SimpleSurvey>;
+      }
+
+      let root = document.getElementById("example");
+      let container = ReactDOM.createRoot(root);
+      container.render(<App />);
+    </script>
+  </body>
+</html>

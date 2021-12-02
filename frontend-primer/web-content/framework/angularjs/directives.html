@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<script
-	src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
-</head>
-<body>
-	<div ng-app="a1" ng-init="firstName='John';lastName='test'">
-		<p>
-			姓名为 <span ng-bind="lastName"></span>
-		</p>
-		
-		<p>姓名：<input type="text" ng-model="firstName"></p>
-     	<p>你输入的为： {{ firstName }}</p>		
-	</div>	
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://code.angularjs.org/1.8.2/angular.js"></script>
+  </head>
+  <body>
+    <div ng-app="a1" ng-init="firstName='John';lastName='test'">
+      <p>姓名为 <span ng-bind="lastName"></span></p>
+
+      <p>姓名：<input type="text" ng-model="firstName" /></p>
+      <p>你输入的为： {{ firstName }}</p>
+    </div>
+  </body>
 </html>

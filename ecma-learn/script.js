@@ -1,6 +1,6 @@
 const obj = {
     greeting: 'hello ',
-    name: 'es6'
+    name_: 'es6'
 }
 const { greeting, name } = obj
-console.log(greeting, name)
+console.log(greeting, name_)

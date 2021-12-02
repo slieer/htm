@@ -1,44 +1,50 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<script type="text/javascript" src="../../primer/jslib/angular/angular.js"></script>
-</head>
-<body>
-	<div id="app1" ng-app="myApp">
-		<span ng-controller="myCtrl">{{ firstName + " " + lastName }}</span> <br>
-		<span ng-controller="yourCtrl">{{ secondName + " " + thirdName
-			+ (1 + 2) }}</span>
-	</div>
-	<br>
-	<div id="app2" ng-app="yourApp" ng-controller="yourCtrl">{{1 +
-		2}} {{ secondName + " " + thirdName }}</div>
+  <head>
+    <meta charset="utf-8" />
+    <script
+      type="text/javascript"
+      src="../../primer/jslib/angular/angular.js"
+    ></script>
+  </head>
+  <body>
+    <div id="app1" ng-app="myApp">
+      <span ng-controller="myCtrl">{{ firstName + " " + lastName }}</span>
+      <br />
+      <span ng-controller="yourCtrl"
+        >{{ secondName + " " + thirdName + (1 + 2) }}</span
+      >
+    </div>
+    <br />
+    <div id="app2" ng-app="yourApp" ng-controller="yourCtrl">
+      {{1 + 2}} {{ secondName + " " + thirdName }}
+    </div>
 
-<script>
-var app = angular.module("myApp", []);
-app.controller("myCtrl", function($scope) {
-    $scope.firstName = "John";
-    $scope.lastName = "Doe";
-});
+    <script>
+      var app = angular.module("myApp", []);
+      app.controller("myCtrl", function($scope) {
+          $scope.firstName = "John";
+          $scope.lastName = "Doe";
+      });
 
-app.controller("yourCtrl", function($scope) {
-	$scope.secondName = "xiaoming";
-	$scope.thirdName = "daming";
-});
+      app.controller("yourCtrl", function($scope) {
+      	$scope.secondName = "xiaoming";
+      	$scope.thirdName = "daming";
+      });
 
-var app1 = angular.module('yourApp', []);
-app1.controller("yourCtrl", function($scope) {
-	$scope.secondName = "yitianjian";
-	$scope.thirdName = "tulongdao";
-});
+      var app1 = angular.module('yourApp', []);
+      app1.controller("yourCtrl", function($scope) {
+      	$scope.secondName = "yitianjian";
+      	$scope.thirdName = "tulongdao";
+      });
 
-<!--
-1.一个页面会自动加载第一个ng-app
-2.如果想启动其它ng-app，需要手动加载
-3.一个ng-app可以有多个controller
-4.$scope的范围局限于每一个controller中
--->
-angular.bootstrap(document.getElementById("app2"), ['yourApp']);
-</script>
-</body>
+      <!--
+      1.一个页面会自动加载第一个ng-app
+      2.如果想启动其它ng-app，需要手动加载
+      3.一个ng-app可以有多个controller
+      4.$scope的范围局限于每一个controller中
+      -->
+      angular.bootstrap(document.getElementById("app2"), ['yourApp']);
+    </script>
+  </body>
 </html>
