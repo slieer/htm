@@ -30,8 +30,9 @@
             let li=<li key={item}>{item}</li>;
             listItem.push(li);
           })
-      
-          return <ul>{listItem}</ul>
+          
+          console.log('log print.');
+          return <div><ul>{listItem}</ul><MyFunctionComponent/></div>
         }
       }
       

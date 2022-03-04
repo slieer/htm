@@ -13,18 +13,23 @@
       //import React, { useState } from "react";
       function Question({ question, name, change, index }) {
         return (
-          <div key={index}>
-            <label htmlFor={"1_"+index}>{question}</label>
-            <input type="radio" id={"1_"+index} name={name} value="0" onChange={change}/>
-            <label htmlFor={"2_"+index}>超级满意</label>
-            <input type="radio" id={"2_"+index} name={name} value="1" onChange={change}/>
-            <label htmlFor="">比较满意</label>
-            <input type="radio" id={"3_"+index} name={name} value="2" onChange={change}/>
+          <div>
             <label htmlFor="">满意</label>
-            <input type="radio" id={"4_"+index} name={name} value="3" onChange={change}/>
+            <input
+              type="radio"
+              id={"4_" + index}
+              name={name}
+              value="3"
+              onChange={change}
+            />
             <label htmlFor="">不满意</label>
-            <input type="radio" id={"5_"+index} name={name} value="4" onChange={change}/>
-            <label htmlFor="">超级不满意</label>
+            <input
+              type="radio"
+              id={"5_" + index}
+              name={name}
+              value="4"
+              onChange={change}
+            />
           </div>
         );
       }
@@ -50,7 +55,13 @@
         return (
           <form onSubmit={onSubmit}>
             {questions.map((q, index) => (
-              <Question question={q} name={q} change={handleChange} index={index} />
+              <Question
+                key={"q" + index}
+                question={q}
+                name={q}
+                change={handleChange}
+                index={index}
+              />
             ))}
 
             <input type="submit" value="提交" />
@@ -59,8 +70,9 @@
       }
 
       function App() {
-        return <SimpleSurvey questions={["q1", "q2", "q3", "q4"]} >
-        </SimpleSurvey>;
+        return (
+          <SimpleSurvey questions={["q1", "q2", "q3", "q4"]}></SimpleSurvey>
+        );
       }
 
       let root = document.getElementById("example");
