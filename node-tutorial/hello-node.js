@@ -1,6 +1,10 @@
+/**
+ * 运行方式: node hello-node.js
+ */
 const http = require('http')
 
 const hostname = '127.0.0.1'
+//Express 默认端口
 const port = 3000
 
 const server = http.createServer((req, res) => {
