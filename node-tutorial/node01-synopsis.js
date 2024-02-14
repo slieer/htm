@@ -1,7 +1,9 @@
 /**
+ * https://nodejs.org/docs/latest/api/synopsis.html
+ * 使用node自带的http server
  * 运行方式: node hello-node.js
  */
-const http = require('http')
+const http = require('node:http');
 
 const hostname = '127.0.0.1'
 //Express 默认端口
