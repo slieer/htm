@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        {
+            console.log('----------------------');
+        }
+        {
+            console.log('----------------------');
+        }
+        {
+            console.log('----------------------');
+        }
+        {
+            console.log('----------------------');
+        }
+        {
+            //map、set、object对比
+            let item = {name   : 'fang'},
+                obj  = {},
+                map  = new Map(),
+                set  = new Set();
+
+            //增
+            map.set('name', 'fang');
+            set.add(item);
+            obj['name'] = 'fang';
+            console.log(map); //Map(1) {"name" => "fang"}
+            console.log(set); //Set(1) {{…}}
+            console.log(obj); //{name: "fang"}
+
+            //查
+            console.info(map.has('name'), set.has(item), 'name' in obj);// true true true
+
+            //改
+            map.set('name', 'yue');
+            item.name   = 'yue';
+            obj['name'] = 'yue';
+            console.log('改',obj);   //{name: "yue"}
+            console.log(map);   //Map(1) {"name" => "yue"}
+            console.log(set);   //Set(1) {{…}}
+
+            //删
+            map.delete('name');
+            set.delete(item);
+            delete obj['name'];
+            console.info(map); //Map(0) {}
+            console.info(set); //Set(0) {}
+            console.info(obj); //{}
+            console.log('----------------------');
+        }
+        {
+            let index,
+                set_isExit,
+                arr_isExit,
+
+                set = new Set(),
+                arr = [];
+            // 增
+            set.add({name: 'fang'});
+            arr.push({name: 'fang'});
+            console.log(set); //Set(1) {{…}}
+            console.log(arr); //[{…}]
+
+            //查
+            //has({name:'fang'})是一个新生成的对象，返回肯定是false
+            //要想输出true，这个对象必须被保存到一个才行
+            let obj = {age:12};
+            set.add(obj);
+            console.log('sdsdf====>', set.has(obj)); //true
+            set_isExit = set.has({name:'fang'});
+            arr_isExit = arr.find(item => item.name);
+            console.log('let',set_isExit, arr_isExit); //false {name: "fang"}
+
+            // 改
+            console.log('改改改改改改');
+            console.log(arr);
+            set.forEach(item=>item.name ? item.name='yue' : '');
+            arr.forEach(item=>item.name ? item.name='yue' : '');
+            console.log(set); //Set(2) {{…}, {…}}
+            console.log(arr); //{[name: 'yue']}
+            // 删
+            set.forEach(item => item.name ? set.delete(item) : '');
+            index = arr.findIndex(item => item.name);
+            arr.splice(index, 1);
+            console.log(set); //Map(0) {}
+            console.log(arr); //[]
+            console.log('----------------------');
+        }
+        {
+            //增
+            let map = new Map(),
+                arr = [];
+            map.set('name', 'fangfeiyue');
+            arr.push({'name': 'fangfeiyue'});
+            console.log(map);   //Map(1) {"name" => "fangfeiyue"}
+            console.log(arr);   //[{…}]
+
+            //查
+            let map_isExit = map.has('name'),
+                arr_isExit = arr.find(item => item.name);
+            console.log(map_isExit);    //true
+            console.log(arr_isExit);    //{name: "fangfeiyue"}
+
+            //改
+            map.set('name', 'yuenong');
+            arr.forEach(item => item.name ? item.name='yuenong' : '');
+            console.log(map);   //Map(1) {"name" => "yuenong"}
+            console.log(arr);   //[{name : "yuenong"}]
+
+            //删除元素
+            map.delete('name');
+            let index = arr.findIndex(item => item.name);
+            arr.splice(index, 1);
+            console.log(map); // Map(0) {}
+            console.log(arr); // []
+            console.log('----------------------');
+        }
+    </script>
+</body>
+</html>

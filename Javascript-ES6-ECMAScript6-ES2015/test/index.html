@@ -1,0 +1,307 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>家长自测(快捷版)</title>
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <link rel="stylesheet" href="./common.css">
+    <link id="layuicss-laydate" rel="stylesheet" href="http://care.shouhubaby.com/themes/simpleboot3/public/assets/lib/layui/css/modules/laydate/default/laydate.css?v=5.0.8" media="all">
+    <link id="layuicss-layer" rel="stylesheet" href="http://care.shouhubaby.com/themes/simpleboot3/public/assets/lib/layui/css/modules/layer/default/layer.css?v=3.1.0" media="all">
+    <link id="layuicss-skincodecss" rel="stylesheet" href="http://care.shouhubaby.com/themes/simpleboot3/public/assets/lib/layui/css/modules/code.css" media="all">
+
+</head>
+<body>
+<div class="view">
+    <div id="box_list" class="symptom">
+        <div class="sy_top">
+                请选择宝宝年龄<select id="age" class="baby_age">
+                <option value="1">0个月-6个月以下</option>
+                <option value="2">6个月-12个月</option>
+                <option value="3">1周岁-3周岁以下</option>
+                <option value="4">3周岁-5周岁以下</option>
+                <option value="5">5周岁-7周岁以下</option>
+            </select>
+        </div>
+        <div class="sy_list">
+            <em class="current" id="8">发烧</em>
+            <em id="1">感冒</em>
+            <em id="4">咳嗽</em>
+            <em id="6">夜啼</em>
+            <em id="2">便秘</em>
+            <em id="5">腹泻</em>
+            <em id="3">厌食</em>
+            <em id="7">积食</em>
+        </div>
+        <div class="sy_show">
+            <dl class="clearfix">
+                <dd class="show">
+                    <div class="seclion layui-form">
+                        <!-- 发烧 -->
+                        <li>
+                            <input type="radio" lay-filter="gis" name="2222" value="1" id="123" title="37.4℃<体温<38.5℃" class="fever">
+                        </li>
+                        <li>
+                            <input type="radio"  lay-filter="gis" name="2222" value="2" id="234" title="体温>38.5℃" class="fever">
+                        </li>
+                        <li>
+                            <input type="radio" lay-filter="gis" name="1111" value="3" id="" title="大便稀">
+                        </li>
+                        <li>
+                            <input type="radio" lay-filter="gis" name="1111" value="4" id="" title="大便干">
+                        </li>
+                    </div>
+                </dd>
+
+                <dd>
+                    <div class="seclion layui-form">
+                        <!-- 感冒 -->
+                        <li>
+                            <input id="dayali" type="radio" lay-filter="gis" name="2222" id="" value="5" title="37.4℃<体温<38.5℃">
+                        </li>
+                        <li>
+                            <input type="radio" lay-filter="gis" name="2222" id="" value="6" title="体温>38.5℃">
+                        </li>
+                        <li>
+                            <input type="checkbox" lay-filter="gis" name="" id="" value="7" title="鼻塞" lay-skin="primary">
+                        </li>
+                        <li>
+                            <input type="checkbox" lay-filter="gis" name="" id="" value="8" title="打喷嚏" lay-skin="primary">
+                        </li>
+                        <li>
+                            <input type="radio" lay-filter="gis" name="1111" id="" value="9" title="流清涕">
+                        </li>
+                        <li>
+                            <input type="radio" lay-filter="gis" name="1111" id="" value="10" title="流黄涕">
+                        </li>
+                        <li>
+                            <input type="checkbox" lay-filter="gis" name="" id="" value="11" title="咳嗽" lay-skin="primary">
+                        </li>
+                    </div>
+                </dd>
+                <dd>
+                    <div class="seclion layui-form">
+                        <!-- 咳嗽 -->
+                        <li>
+                            <input type="radio" lay-filter="gis" name="1111" id="" value="12" title="痰白清稀">
+                        </li>
+                        <li>
+                            <input type="radio" lay-filter="gis" name="1111" id="" value="13" title="痰黄或稠" lay-skin="primary">
+                        </li>
+                        <li>
+                            <input type="checkbox" lay-filter="gis" name="" id="" value="14" title="喉间有痰音" lay-skin="primary">
+                        </li>
+                        <li>
+                            <input type="checkbox" lay-filter="gis" name="" id="" value="15" title="咽喉肿/嗓子疼" lay-skin="primary">
+                        </li>
+                        <li>
+                            <input type="checkbox" lay-filter="gis" name="" id="" value="16" title="咳嗽声重" lay-skin="primary">
+                        </li>
+                        <li>
+                            <input type="checkbox" lay-filter="gis" name="" id="" value="17" title="干咳痰少不易咳出" lay-skin="primary">
+                        </li>
+                    </div>
+                </dd>
+                <dd>
+                    <div class="seclion layui-form">
+                        <!-- 夜啼 -->
+                        <li>
+                            <input type="radio" lay-filter="gis" name="1111" id="" value="39" title="大便稀">
+                        </li>
+                        <li>
+                            <input type="radio" lay-filter="gis" name="1111" id="" value="40" title="大便干">
+                        </li>
+                        <li>
+                            <input type="checkbox" lay-filter="gis" name="" id="" value="38" title="受到惊吓" lay-skin="primary">
+                        </li>
+                        <li>
+                            <input type="checkbox" lay-filter="gis" name="" id="" value="37" title="夜间啼哭，白天正常" lay-skin="primary">
+                        </li>
+                    </div>
+                </dd>
+                <dd>
+                    <div class="seclion layui-form">
+                        <!-- 便秘 -->
+                        <li>
+                            <input type="checkbox" lay-filter="gis" name="" id="" value="18" title="腹胀" lay-skin="primary">
+                        </li>
+                        <li>
+                            <input type="radio" lay-filter="gis" name="1111" id="" value="19" title="大便干" lay-skin="primary">
+                        </li>
+                        <li>
+                            <input type="checkbox" lay-filter="gis" name="" id="" value="20" title="大便3天以上一次" lay-skin="primary">
+                        </li>
+                        <li>
+                            <input type="radio" lay-filter="gis" name="1111" id="" value="21" title="大便不硬，但排便不畅" lay-skin="primary">
+                        </li>
+                    </div>
+                </dd>
+                <dd>
+                    <div class="seclion layui-form">
+                        <!-- 腹泻 -->
+                        <li>
+                            <input type="checkbox" lay-filter="gis" name="" id="" value="27" title="大便稀" lay-skin="primary">
+                        </li>
+                        <li>
+                            <input type="radio" lay-filter="gis" name="1111" id="" value="28" title="大便臭">
+                        </li>
+                        <li>
+                            <input type="radio" lay-filter="gis" name="1111" id="" value="29" title="色淡不臭">
+                        </li>
+                        <li>
+                            <input type="checkbox" lay-filter="gis" name="" id="" value="30" title="肛周红" lay-skin="primary">
+                        </li>
+                        <li>
+                            <input type="checkbox" lay-filter="gis" name="" id="" value="31" title="大便有粘液" lay-skin="primary">
+                        </li>
+                        <li>
+                            <input type="checkbox" lay-filter="gis" name="" id="" value="32" title="大便夹有不消化食物残渣" lay-skin="primary">
+                        </li>
+                    </div>
+                </dd>
+                <dd>
+                    <div class="seclion layui-form">
+                        <!-- 厌食 -->
+                        <li>
+                            <input type="radio" lay-filter="gis" name="1111" id="" value="34" title="大便稀">
+                        </li>
+                        <li>
+                            <input type="radio" lay-filter="gis" name="1111" id="" value="35" title="大便干">
+                        </li>
+                        <li>
+                            <input type="checkbox" lay-filter="gis" name="" id="" value="33" title="食欲差/食量少" lay-skin="primary">
+                        </li>
+                        <li>
+                            <input type="checkbox" lay-filter="gis" name="" id="" value="36" title="食入即便" lay-skin="primary">
+                        </li>
+                    </div>
+                </dd>
+                <dd>
+                    <div class="seclion layui-form">
+                        <!-- 积食 -->
+                        <li>
+                            <input type="checkbox" lay-filter="gis" name="" value="22" id="" title="腹胀" lay-skin="primary">
+                        </li>
+                        <li>
+                            <input type="checkbox" lay-filter="gis" name="" value="23" id="" title="有口气" lay-skin="primary">
+                        </li>
+                        <li>
+                            <input type="radio" lay-filter="gis" name="1111" value="25" id="" title="大便稀/大便酸臭" value="大便稀">
+                        </li>
+                        <li>
+                            <input type="radio" lay-filter="gis" name="1111" value="24" id="" title="大便干" value="大便干">
+                        </li>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+
+    </div>
+    <form action="/Portal/parent/parent_symptom_result" method="post" id="form">
+        <input type="hidden" name="parent_id" value="{$parent.id}">
+        <input type="hidden" name="age" value="1" id="year">
+        <input type="hidden" name="symptom_type" id="symptom_type">
+        <div id="jingjing">
+
+        </div>
+        <!--<input type="hidden" name="symptom_id[]" id="symptom_id">-->
+    </form>
+
+    <div class="big-btn tijiao">
+        提交
+    </div>
+</div>
+<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+
+<script src="./layui//layui.all.js"></script>
+<script>
+    $(function(){
+        document.getElementById('symptom_type').value = 8;
+    })
+    // table栏
+    createTab("box_list");
+    function createTab(id) {
+        var box = document.getElementById(id);
+        var sps = box.getElementsByTagName("em");
+        var lis = box.getElementsByTagName("dd");
+        for (var i = 0; i < sps.length; i++) {
+            sps[i].index = i;
+            sps[i].onclick = function () {
+                $('#jingjing').empty();
+                for (var i = 0; i < sps.length; i++) {
+                    sps[i].className = "";
+                    lis[i].className = "";//
+                }
+                this.className = "current";
+                lis[this.index].className = "show";
+                not('lis[this.index]').location.reload();
+                // other.location.reload();
+                //病种的id
+                document.getElementById('symptom_type').value = this.id
+                //切换病种，将勾选的症状去掉
+                // $('#jingjing').empty();
+            };
+        }
+    }
+
+    //Demo
+    layui.use('form', function () {
+        var form = layui.form;
+        var raidoObj = {};
+
+        form.on('radio(gis)', function (data) {
+
+            if (raidoObj[data.elem.name] && raidoObj[data.elem.name].indexOf(data.elem.value) >- 1){
+                $(this).prop('checked', false);
+                $('#jingjing input[value='+data.value+']').remove();
+                form.render();
+                var obj1 = {};
+                obj1[data.elem.name] = [];
+                $.extend(raidoObj,obj1);
+                return;
+            }
+            
+            $('#jingjing input[name="symptom_id['+ data.elem.name + ']"]').remove();
+
+            var obj = {};
+            var arr = [];
+            arr.push(data.elem.value);
+            obj[data.elem.name] = arr;
+            $.extend(raidoObj, obj);
+
+            $('#jingjing').append(
+                '<input type="hidden" name="symptom_id['+ data.elem.name + ']" value="' + data.value +'">'
+                )
+        });
+        form.on('checkbox(gis)', function (data) {
+            $('#jingjing').append(
+                '<input type="hidden" name="symptom_id[]" value="' + data.value +'">'
+            )
+        });
+    });
+
+    $('#age').change(function(){
+        document.getElementById('year').value = $('#age').val()
+    })
+
+    //提交
+    $('.tijiao').click(function(){
+        var symptom_type = $('#symptom_type').val();
+        if (!symptom_type || symptom_type == 8)
+        {
+            if (!$('input[name="symptom_id[2222]"]').val())
+            {
+                alert('病种为发热时，体温必须选择一项');
+                return false;
+            }
+        }
+        $('#form').submit();
+    });
+
+</script>
+<!-- 菜单栏 -->
+<!-- <include file="public@footer"> -->
+</body>
+</html>

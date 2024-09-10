@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        {
+            console.log('--------------------');
+        }    
+        {
+            console.log('--------------------');
+        }    
+        {
+            class Parent{
+                constructor(name = 'fangfeiyue'){
+                    this.name = name;
+                }
+            }
+            //静态属性
+            Parent.age = 18;
+            console.log(Parent.age); //18
+            console.log('--------------------');
+        }    
+        {
+            class Parent{
+                constructor(name = 'fangfeiyue'){
+                    this.name = name;
+                }
+                static tell(){
+                    console.log('执行了静态方法');
+                }
+            }
+
+            Parent.tell(); //执行了静态方法
+            console.log('--------------------');
+        }    
+        {
+            class Parent{
+                constructor(name = 'feiyue'){
+                    this.name = name;
+                }
+                get longName(){
+                    return 'fang' + this.name;
+                }
+                set longName(value){
+                    this.name = value;
+                }
+            }
+            let parent = new Parent();
+            console.log(parent.longName ); //fangfeiyue
+            console.log('--------------------');
+        }    
+        {
+            // 继承传递参数
+            class Parent{
+                constructor(name = 'fangfeiyue'){
+                    this.name = name;
+                }
+            }
+            class Child extends Parent{
+                constructor(name='child'){
+                    super(name);
+                    this.age = 12;
+                }
+            }
+
+            let parent = new Parent('fangyuenong'),
+                child = new Child('hello');
+            console.log(child); //Child {name: "hello", age: 12}
+            console.log(parent); //Parent {name: "fangyuenong"}
+            console.log('--------------------');
+        }    
+        {
+            // 继承
+            class Parent{
+                constructor(name = 'fangfeiyue'){
+                    this.name = name;
+                }
+            }
+            class Child extends Parent{
+
+            }
+
+            let parent = new Parent('fangyuenong'),
+                child = new Child();
+            console.log(child); //Child {name: "fangfeiyue"}
+            console.log('--------------------');
+        }    
+        {
+            class Parent{
+                constructor(name = 'fangfeiyue'){
+                    this.name = name;
+                }
+            }
+
+            let parent = new Parent('fangyuenong');
+            console.log('构造函数和实例', parent); //Parent {name: "fangyuenong"}
+            console.log('--------------------');
+        }    
+    </script>
+</body>
+</html>

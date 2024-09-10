@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+</head>
+<body>
+
+    <input class="test" type="radio" name="sex"/>
+    <input type="radio" name="sex"/>
+
+    <button id="select">选中</button>
+    <button id="cancel">取消</button>
+    
+    <script>
+
+
+        $('#select').on('click', function(){
+            $('.test').attr('checked', 'checked');
+        });
+        $('#cancel').on('click', function(){
+            $('.test').removeAttr('checked');
+        });
+
+
+        
+
+        {
+            //扩展运算符
+            let {a, b, ...rest} = {a:123, b:456, c:34, d:23};
+            console.log(a, b, rest);//123 456 {c: 34, d: 23}
+            console.log('---------------------');
+        }
+        {
+            let obj = {id:'12', name:'fang'};
+            for (let [key, value] of Object.entries(obj)){
+                console.log(key, value); //name fang
+            }
+            console.log('---------------------');
+        }
+        {
+            let obj = {name: 'fang'};
+            let obj2 = {name: 'feiyue'};
+            // console.log(Object.assign(obj, obj2)); //{name: "feiyue"}
+            console.log(Object.assign({}, obj, obj2)); //{name: "feiyue"}
+            console.log('---------------------');
+        }
+        {
+            console.log(Object.assign({a:1}, {b:2})); //{a: 1, b: 2}
+            console.log('---------------------');
+        }
+        {
+            //新增api
+            console.log(Object.is('111', '111')); //true
+            console.log(Object.is([], [])); //false
+            console.log('---------------------');
+        }
+        {
+            //属性表达式
+            let name = 'FangFei';
+            const obj = {
+                [name]: 'yue'
+            };
+
+            console.log(obj); //{FangFei: "yue"}
+            console.log('---------------------');
+        }
+        {
+            //简洁表示法
+            let o = 1,
+                y = 2;
+            
+            const obj = {
+                o: o,
+                y: y,
+                test: function(){
+                    console.log('test');
+                }
+            };
+
+            console.log(obj); //{o: 1, y: 2, test: f()}
+
+            //简洁表示法
+            const obj2 = {
+                o,
+                y,
+                test(){
+                    console.log(test);
+                }
+            };
+            console.log(obj2); //{o: 1, y: 2, test: f()}
+            console.log('---------------------');
+        }
+    </script>
+</body>
+</html>

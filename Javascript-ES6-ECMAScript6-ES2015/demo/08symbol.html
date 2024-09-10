@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        {
+            console.log('-----------------------');
+        }
+        {
+            console.log('-----------------------');
+        }
+        {
+            console.log('-----------------------');
+        }
+        {
+            // let obj = {id:12, name: 'fangfeiyue', age: 27};
+            let arr = [1, 23, 334, 4, 554, 6];
+            for (let item of arr){
+                console.log(item);
+            }
+            console.log('-----------------------');
+        }
+        {
+            let a1 = Symbol.for('abc');
+            let obj = {
+                [a1]: '123',
+                'abc': 345,
+                'c': 456
+            };
+
+            console.log(obj);   //{abc: 345, c: 456, Symbol(abc): "123"}
+
+            Object.getOwnPropertySymbols(obj).forEach(function(item){
+                console.log(item); //Symbol(abc)
+                console.log(obj[item]); //123
+            })
+
+            for (let [key, value] of Object.entries(obj)){
+                console.log(key, value);
+                //abc 345
+                //c 45
+            }
+            console.log('-------------ownKeys------------');
+            Reflect.ownKeys(obj).forEach(item=>{
+                console.log(item);
+                // abc
+                // c
+                // Symbol(abc)
+            });
+
+            console.log('-----------------------');
+        }
+        {
+            // 声明方式2
+            let a1 = Symbol.for('a1');
+            let a2 = Symbol.for('a1');
+            let a3 = Symbol.for(1);
+            console.log(a1 === a2); //true
+            console.log(a1);    // Symbol(fangfeiyue)
+            console.log('-----------------------');
+        }
+        {
+            // 声明
+            let a1 = Symbol(),
+                a2 = Symbol();
+            console.log(a1 === a2);  // false  
+            console.log(a1, a2);    // Symbol() Symbol()
+            console.log('-----------------------');
+        }
+    </script>
+</body>
+</html>

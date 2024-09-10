@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        {
+
+            console.log('-----------------------');
+        }
+        {
+
+            console.log('-----------------------');
+        }
+        {
+
+            console.log('-----------------------');
+        }
+        {
+
+            console.log('-----------------------');
+        }
+        {
+            let weakMap = new WeakMap();
+            let o = {};
+            weakMap.set(o, 123);
+            console.log(weakMap);   //WeakMap {{…} => 123}
+            console.log(weakMap.get(o)); //123
+            console.log('-----------------------');
+        }
+        {
+            let map = new Map([['name','fangfeiyue', 'age', 18]]);
+            console.log(map); //Map(1) {"name" => "fangfeiyue"}
+            console.log('-----------------------');
+        }
+        {
+            let map = new Map([['name', 'fangfeiyue'], ['age', 18]]);
+            console.log(map);   //Map(2) {"name" => "fangfeiyue", "age" => 18}
+            map.clear();
+            console.log(map); //Map(0) {}
+            console.log('-----------------------');
+        }
+        {
+            let map = new Map(),
+                obj = {name: 'fangfeiyue'};
+            
+            map.set(obj, '18');
+            console.log(map); //Map(1) {{…} => "18"}
+            console.log('-----------------------');
+        }
+        {
+            let map = new Map([['key1', 2], ['key2', 5]]);
+            console.log(map); //Map(2) {"key1" => 2, "key2" => 5}
+            console.log(map.size); //2
+            console.log(map.delete(1),map);//false Map(2) {"key1" => 2, "key2" => 5}
+            console.log('-----------------------');
+        }
+        {
+            let map = new Map(),
+                arr = [1];
+            map.set(arr, 123);
+            console.log(map.get(arr)); //123
+
+            console.log(map); //Map(1) {Array(1) => 123}
+            console.log('-----------------------');
+        }
+        {
+            let list = new Set([1, 2, 34, 4, 4, 5, 6, 7]);
+            console.log(list);
+            console.log('-----------------------');
+        }
+
+        {
+            Array.prototype.remove = function(val) {
+                var index = this.indexOf(val);
+                if (index > -1) {
+                this.splice(index, 1);
+                }
+            };
+
+            var testArr = [1,2,3, 4, 5, 6, 7];
+            testArr.remove(7);
+            console.log(testArr); //[1, 2, 3, 5, 6, 7]
+        }
+
+        {
+            let list = new WeakSet();
+            console.log(list); //WeakSet {}
+
+            // let list2  = new WeakSet(1); //参数不能是数值类型
+            // console.log(list2); //报错
+    
+            let arr = [1, 2, 3, 4, 5, 6];
+            let list3 = new WeakSet(arr);//报错
+
+            let arr2 = [[1, 2, 3, 3,4, 5, 6, 6]];
+            let list4 = new WeakSet(arr2);
+            console.log(list4); // WeakSet {Array(8)}
+
+            console.log('-------------------');
+        }
+        {
+            let arr = [1, 2, 3, 4, 435, 45, 23, 12];
+            let list = new Set(arr);
+            list.forEach(item=>{
+                console.log(item);//1, 2, 3, 4, 435, 45, 23, 12
+            })
+            console.log('------------------');
+        }
+        {
+            //删除制定元素
+            let arr = [1, 2, 3, 4];
+            let list = new Set(arr);
+            list.delete(1);
+            console.log(list); //Set(3) {2, 3, 4}
+            console.log('------------------');
+        }
+        {
+            let arr = [1, 1, 2, 3, 4, 5, 6],
+                list = new Set(arr);
+            console.log(list.has(6));   //true
+            console.log('------------------');
+        }
+        {
+            let arr = [1, 23, 23, 34, 5, 56, 56];
+            let list = new Set(arr);
+            for (let item of list){
+                console.log('item====>>>', item);
+            }
+            console.log(list); //Set(5) {1, 23, 34, 5, 56}
+            console.log('------------------');
+        }
+        {
+            let list = new Set();
+            list.add(1);
+            list.add(2);
+            list.add(1);
+            console.log(list); //Set(2) {1, 2}
+            console.log('------------------');
+        }
+        {
+            let arr = [2, 4, 345, 45, 23];
+            let list = new Set(arr);
+            console.log(list); //Set(5) {2, 4, 345, 45, 23}
+            console.log(list.size); //5
+            console.log('------------------');
+        }
+        {
+            let list = new Set();
+            list.add(1);
+            list.add(2);
+            console.log(list); //Set(2)
+            console.log(list.size); //2
+            console.log('------------------');
+        }
+    </script>
+</body>
+</html>

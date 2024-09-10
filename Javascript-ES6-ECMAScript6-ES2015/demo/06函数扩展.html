@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        {
+        console.log('---------------------');
+        }
+        {
+            console.log('---------------------');
+        }
+        {
+            console.log('---------------------');
+        }
+        {
+            console.log('---------------------');
+        }
+        {
+            console.log('---------------------');
+        }
+        {
+            // 箭头函数
+
+            console.log('---------------------');
+        }
+        {
+            // 扩展运算符
+            console.log(...[1,2,3,4]); //1 2 3 4
+            console.log('---------------------');
+        }
+        {
+            function test() {
+                console.log(arguments);
+                console.log(arguments[0]);
+                console.log(arguments.length);
+            }
+
+            test(1, 2,3, 43, 4, 5, 6);
+            console.log('---------------------');
+        }
+        {
+            //rest参数
+            function test(...arg){ //数组
+                for (let v of arg){
+                    console.log(v);
+                }
+            }
+
+            test(1, 2, 3, 4, 5, 6);
+            console.log('---------------------');
+        }
+        {
+            // 作用域
+            let  x = 'test';
+
+            function test2(x, y=x){
+                console.log(x, y);
+            }
+
+            test2('love'); //love, love
+            test2(); // undefined, undefined
+
+            let y = 'test2';
+            function test3(c, x = y){
+                console.log(c, y);
+            }
+
+            test3('love'); //love, test2
+            test3(); //undefined, "test2"
+
+            console.log('---------------------');
+        }
+        {
+            // 默认参数
+            function test(x = 'Fang'){
+                console.log(x);
+            }
+            test('Feiyue');
+
+            function test2 (x = 'Fang', y){//默认值后面不能在跟没有默认值的变量
+                console.log(x, y);//feiyue, undefined
+            }
+
+            test2('feiyue');
+            console.log('---------------------');
+        }
+    </script>
+</body>
+</html>
