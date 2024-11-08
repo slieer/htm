@@ -1,0 +1,28 @@
+markdown: kramdown
+highlighter: rouge
+permalink: none
+sitename: JavaScript 标准参考教程（alpha）
+
+chapters:
+- introduction
+- grammar
+- stdlib
+- oop
+- advanced
+- dom
+- bom
+- htmlapi
+
+introduction: 导论
+grammar: 语法
+stdlib: 标准库
+oop: 面向对象编程
+dom: DOM模型
+bom: 浏览器环境
+htmlapi: Web API
+jquery: jQuery
+library: 草稿一：函数库
+nodejs: 草稿二：Node.js
+tool: 开发工具
+advanced: 语法专题
+appendix: 附录
